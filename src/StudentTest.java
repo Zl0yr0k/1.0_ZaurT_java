@@ -2,16 +2,21 @@ import java.util.Scanner;
 
 class Student {
     Student () {}
-    Student (int numberOfStudentTick2, String name2, String surname2, int yearOfLearn2,String course2, float money){
+    Student (int numberOfStudentTick2, String name2, String surname2, int yearOfLearn2,String course2, float money2, float averageOfMathematics2, float averageOfEconomic2, float averageOfForeign2){
         numberOfStudentTick = numberOfStudentTick2;
         name =name2;
         surname = surname2;
         yearOfLearn = yearOfLearn2;
         course =course2;
+        money = money2;
+        averageOfMathematics = averageOfMathematics2;
+        averageOfEconomic = averageOfEconomic2;
+        averageOfForeign = averageOfForeign2;
+
     }
 
     Student (int numberOfStudentTick3, String name3, String surname3, String course3) {
-        this (numberOfStudentTick3, name3, surname3, 0,course3, 0.0F);
+        this (numberOfStudentTick3, name3, surname3, 0,course3, 0.0F, 0,0,0);
     }
     int numberOfStudentTick;
     String name;
@@ -87,15 +92,14 @@ public class StudentTest {
         //Vasiliy.money = vasiliyBankAcciunt.startAccount();
         Vasiliy.money = Vasiliy.bA.startAccount();
         Vasiliy.bA.showInfo(Vasiliy.money);
-        System.out.println(Vasiliy.money);
+
 
         //Vasiliy.money = vasiliyBankAcciunt.replenishmentAccount(Vasiliy.money);
         Vasiliy.money = Vasiliy.bA.replenishmentAccount(Vasiliy.money);
-        System.out.println(Vasiliy.money);
+
 
         //Vasiliy.money = vasiliyBankAcciunt.startAccount();
         Vasiliy.money = Vasiliy.bA.removeAccount(Vasiliy.money);
-        System.out.println(Vasiliy.money);
         Vasiliy.bA.showInfo(Vasiliy.money);
 
         //Vasiliy.money = vasiliyBankAcciunt.replenishmentAccount(Vasiliy.money);
@@ -134,6 +138,22 @@ public class StudentTest {
         //float averageRo = (Rodion.averageOfEconomic+ Rodion.averageOfForeign+ Rodion.averageOfMathematics)/3;
         //System.out.println("Срединй бал у " +Rodion.name + " " + Rodion.surname + " "  + averageRo);
         Rodion.showInfo();
+
+        Student Ivan= new Student(23, "Ivan ", "Stupakov", "Mehanik" );
+        Ivan.averageOfMathematics = 2.23F;
+        Ivan.averageOfEconomic = 1.45F;
+        Ivan.averageOfForeign = 3.34F;
+        Ivan.showInfo();
+
+        Student Eva = new Student(35, "Eva", "Ost",4, "Психология", 500,5.5f, 3.5F, 4.7f  );
+        Eva.showInfo();
+        Eva.bA = new BankAccount();
+        Eva.money = Eva.bA.startAccount();
+        Eva.money = Eva.bA.replenishmentAccount(Eva.money);
+        Eva.money = Eva.bA.removeAccount(Eva.money);
+        Eva.bA.showInfo(Eva.money);
+        System.out.println(Eva.money);
+
     }
 
 
