@@ -1,3 +1,5 @@
+import EmployeePublickDefault.Employee;
+
 public class Main {
     public static void main(String[] args) {
         int a = 11;
@@ -20,6 +22,18 @@ public class Main {
 
         System.out.println(u);
         System.out.println(d);
+
+        Employee testPublickPrivateDefault1 = new Employee(34,"Busya", "home");
+        Employee men = new Employee(45,"klever","work");
+        System.out.println("___________________________________________________");
+        men.getSalary();
+        men.setSalary(67);
+        men.getSalary();
+        men.getId();
+        men.getSurname();
+        System.out.println(men.surname);
+
+
 
 
 

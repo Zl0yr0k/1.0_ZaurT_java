@@ -24,6 +24,5 @@ public class CikleFor {
             System.out.println("Шаг равен нулю или oтридцательный");
         }
 
-
     }
 }
