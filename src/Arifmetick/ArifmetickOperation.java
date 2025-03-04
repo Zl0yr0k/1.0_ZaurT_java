@@ -7,13 +7,14 @@ public class ArifmetickOperation {
 
     ArifmetickOperation () {
         System.out.println("Введи первое число:");
-        numberOfScannerOne = new Scanner(System.in).nextInt();
+        numberOfScannerOne = new Scanner(System.in).nextDouble();
         System.out.println("Введи второе число:");
-        numberOfScannerTwo = new Scanner(System.in).nextInt();
+        numberOfScannerTwo = new Scanner(System.in).nextDouble();
     }
         private double numberOfScannerOne ;
         private double numberOfScannerTwo;
         static  int count;
+        private final static double pi = 3.14;
 
 
     static BigDecimal multiplication(double firs, double second, double third ) {
@@ -26,21 +27,37 @@ public class ArifmetickOperation {
     }
 
 
-    static void DevisionStat (double first, double second) {
+    static void remainderStat(double first, double second) {
         double result = first % second;
         System.out.printf("Остаток от деления:" + result);
         count++;
     }
 
-   public void Devision ( ) {
 
-        DevisionStat(numberOfScannerOne, numberOfScannerTwo);
+    static void  countCircle (double radius) {
+       double L = 2*pi*radius;
+        System.out.println("Длинна окружности будет:" + L);
+    }
+
+    void division( ) {
+
+        remainderStat(numberOfScannerOne, numberOfScannerTwo);
         double resDev = numberOfScannerOne / numberOfScannerTwo;
         BigDecimal mult = multiplication(numberOfScannerOne, numberOfScannerTwo);
         System.out.println("\nЦелое частное от деления :" + (int) resDev+ "\n" + "Результат умножения :" + mult);
         count++;
     }
+    void countSquare(double radius) {
+        double P = pi * radius * radius;
+        System.out.println("Площадь круга равна :" + P);
 
+    }
 
+    void  counAllParam (double radius) {
+        System.out.println("_______________________________________");
+        System.out.println("Радиус окружности :" + radius);
+        countCircle(radius);
+        countSquare(radius);
+    }
 
 }
