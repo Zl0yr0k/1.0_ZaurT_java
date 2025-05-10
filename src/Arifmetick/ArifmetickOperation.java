@@ -14,7 +14,7 @@ public class ArifmetickOperation {
         private double numberOfScannerOne ;
         private double numberOfScannerTwo;
         static  int count;
-        private final static double pi = 3.14;
+        private final static double PI = 3.14;
 
 
     static BigDecimal multiplication(double firs, double second, double third ) {
@@ -23,7 +23,7 @@ public class ArifmetickOperation {
         return  resultBig;
     }
     static BigDecimal multiplication(double firs, double second) {
-        return multiplication(firs,second, 1);
+        return multiplication(firs,second, 0);
     }
 
 
@@ -35,7 +35,7 @@ public class ArifmetickOperation {
 
 
     static void  countCircle (double radius) {
-       double L = 2*pi*radius;
+       double L = 2* PI *radius;
         System.out.println("Длинна окружности будет:" + L);
     }
 
@@ -48,7 +48,7 @@ public class ArifmetickOperation {
         count++;
     }
     void countSquare(double radius) {
-        double P = pi * radius * radius;
+        double P = PI * radius * radius;
         System.out.println("Площадь круга равна :" + P);
 
     }

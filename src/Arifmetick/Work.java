@@ -15,7 +15,7 @@ public class Work {
         System.out.println("Всего операций выполнено(статика):"+ArifmetickOperation.count);
 
         System.out.println("_______________________________");
-        System.out.println("Введи радиус круга, чтобы узнать площадь");
+        System.out.println("\u0365 Введи радиус круга, чтобы узнать площадь");
         double radius = new Scanner(System.in).nextDouble();
         st1.countSquare(radius);
         ArifmetickOperation.countCircle(radius);
