@@ -1,10 +1,39 @@
 package StudentTestPakage;
 
 
+import CarPackage.Car;
+
 public class StudentTest {
+    public void  compareObjectStudent (Student onePersonParam, Student twoPersonParam) {
+        if (onePersonParam.name.equals(twoPersonParam.name) && onePersonParam.surname == twoPersonParam.surname && onePersonParam.course == twoPersonParam.course){
+            System.out.println("Эти объекты равны по содержанию");
+        } else {
+            System.out.println("Эти объекты не равны по содержанию");
+        }
+    }
+
+    public void compareObjectStudentNestedIf (Student onePersonParam, Student twoPersonParam) {
+        if (onePersonParam.name.equals(twoPersonParam.name) ) {
+            System.out.println("Имена этих объектов совпадают");
+            if (onePersonParam.surname == twoPersonParam.surname) {
+                System.out.println("Фамилии этих объектов совпадают");
+                if (onePersonParam.course == twoPersonParam.course){
+                    System.out.println("Курсы этих объектов совпадают");
+                }else {
+                    System.out.println("Курсы этих объектов не совпадают");
+                }
+            }else {
+                System.out.println("Фамилии этих объектов не совпадают");
+            }
+        }else {
+            System.out.println("Имена этих объектов не совпадают");
+        }
+
+    }
+
     public static void main(String[] args) {
         Student Vasiliy = new Student();
-        //BankAccount vasiliyBankAcciunt = new BankAccount();
+        //BankAccount vasiliyBankAccount = new BankAccount();
         Vasiliy.bA = new BankAccount();
         Vasiliy.numberOfStudentTick = 10;
         Vasiliy.name = "Vasiliy";
@@ -82,6 +111,31 @@ public class StudentTest {
         Eva.money = Eva.bA.removeAccount(Eva.money);
         Eva.bA.showInfo(Eva.money);
         System.out.println(Eva.money);
+
+        Student Eva3 = new Student(35, "Eva", "Ost",4, "Психология", 500,5.5f, 3.5F, 4.7f  );
+
+        Student Eva2 = new Student(35,"Eva","Ost","Психология");
+//        Eva2.car = new Car("red", "v4", 4);
+//        System.out.println("Машина у Евы вот такая");
+//        System.out.println(Eva2.car.toString());
+
+
+        System.out.println("Проверим обекты на совпадение");
+        StudentTest compare = new StudentTest();
+        compare.compareObjectStudent(Eva,Eva2);
+        compare.compareObjectStudent(Eva, Tatiana);
+        System.out.println("Проверим объекты насовпадение с помощю nested if");
+        compare.compareObjectStudentNestedIf(Eva, Eva2);
+        compare.compareObjectStudentNestedIf(Eva, Tatiana);
+
+        if (Eva.equals(Eva)) {
+            System.out.println("Эти Евы совпадают");
+        } else {System.out.println("Эти Евы  не совпадают");}
+
+        if (Eva.equals(Tatiana)) {
+            System.out.println("Эти объекты совпадают");
+        } else {System.out.println("Эти объекты не совпадают");}
+
 
     }
 

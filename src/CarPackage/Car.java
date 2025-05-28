@@ -7,7 +7,7 @@ public class Car {
 
     Car () {}
 
-    Car (String colorParam, String engineParam,int amountOfDoorsParam) {
+    public  Car (String colorParam, String engineParam,int amountOfDoorsParam) {
         this.color = colorParam;
         this.engine = engineParam;
         this.amountOfDoorsObject = amountOfDoorsParam;
