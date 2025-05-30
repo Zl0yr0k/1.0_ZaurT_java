@@ -1,6 +1,8 @@
 package Arifmetick;
 
 public class Arifmetic {
+    public int number23;
+    public static int number24;
     public static void main(String[] args) {
         int i1 = 5;
         int i2 = 11;
