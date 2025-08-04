@@ -5,16 +5,36 @@ import java.util.Calendar;
 public class Month {
     private int month;
     private int days;
+    private int hours;
+    private int minutes;
+    private int seconds;
 
     private void getMonthCalendar () {
         Calendar calendar = Calendar.getInstance();
         month = calendar.get(Calendar.MONTH);
         days = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
     }
-    private void countDaysOfManth () {
+    private void countDaysOfMonth() {
         for (int i =1; i <= days;i++ ) {
             System.out.println(i);
         }
+    }
+
+    public int getHours () {
+        Calendar calendar = Calendar.getInstance();
+        hours = calendar.get(Calendar.HOUR);
+        return hours;
+    }
+    public int getMinutes () {
+        Calendar calendar = Calendar.getInstance();
+        minutes =calendar.get(Calendar.MINUTE);
+        return minutes;
+    }
+
+    public int getSeconds () {
+        Calendar calendar = Calendar.getInstance();
+        seconds = calendar.get(Calendar.SECOND);
+        return seconds;
     }
 
     public void  getDaysOfCurrentMonth () {
@@ -22,7 +42,7 @@ public class Month {
         switch (month) {
             case 0 -> {
                 System.out.println("January");
-                countDaysOfManth();
+                countDaysOfMonth();
                 break;
             }
             case 1 -> {
@@ -47,7 +67,7 @@ public class Month {
             }
             case 6 -> {
                 System.out.println("July");
-                countDaysOfManth();
+                countDaysOfMonth();
                 break;
             }
             case 7 -> {

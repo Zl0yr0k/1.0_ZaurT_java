@@ -1,6 +1,8 @@
+package Cikle_For;
+
 import java.util.Scanner;
 
-public class CikleFor {
+public class Main {
     public static void main(String[] args) {
         System.out.print("Введите нижний предел: " );
         int lowLimit = new Scanner(System.in).nextInt();
@@ -24,5 +26,7 @@ public class CikleFor {
             System.out.println("Шаг равен нулю или oтридцательный");
         }
 
+
+        CikleFor1.countTime();
     }
 }
