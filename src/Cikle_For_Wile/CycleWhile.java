@@ -1,3 +1,5 @@
+package Cikle_For_Wile;
+
 import java.util.Scanner;
 
 public class CycleWhile {

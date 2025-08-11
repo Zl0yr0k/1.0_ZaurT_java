@@ -1,4 +1,4 @@
-package Cikle_For;
+package Cikle_For_Wile;
 
 import java.util.Scanner;
 
@@ -28,5 +28,6 @@ public class Main {
 
 
         CikleFor1.countTime();
+        CikleWile1.countTimeWithWile();
     }
 }

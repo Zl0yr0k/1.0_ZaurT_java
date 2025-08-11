@@ -1,10 +1,9 @@
-package Cikle_For;
+package Cikle_For_Wile;
 
 import DataTime.Month;
 
-public class CikleFor1 {
-
-     static void countTime () {
+public class CikleWile1 {
+    static void countTimeWithWile () {
         int hours;
         int minutes;
         int seconds;
