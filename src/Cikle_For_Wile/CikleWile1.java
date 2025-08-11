@@ -14,19 +14,27 @@ public class CikleWile1 {
         seconds = time.getSeconds();
         System.out.println("Текущее время " + hours + ":" + minutes + ":" + seconds);
 
-        OUTER: for (int i = 1 ; i <=hours; i++) {
-            MIDDLE: for (int j = 1 ;j <= 59; j ++ ) {
-                if (i > 1 && j % 10 == 0) {
-                    System.out.println( "pip");
-                }
-                INNER: for (int n =1 ;n <= 59; n ++) {
+        int i =0;
+        OUTER: while (i < hours) {
+
+            int j =-1;
+            MIDDLE: do {
+                j++;
+
+                int n =0;
+                INNER : while (n <=59) {
+
+                    if (n * i >= j) {
+                        System.out.println("pip");
+                        continue MIDDLE ;
+                    }
                     System.out.println( i + ":" + j + ":" + n );
-                    if (n * i >= j) continue MIDDLE;
                     if (i == hours && j == minutes && n == seconds) {break OUTER;}
-
+                    n++;
                 }
 
-            }
+            } while (j <59);
+            i++;
         }
     }
 }
