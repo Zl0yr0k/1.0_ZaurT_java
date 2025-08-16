@@ -14,6 +14,7 @@ public class Main {
         e1.toString(email);
         System.out.println("___________________________________");
         e1.email(email);
+        e1.toString(email);
     }
 
 
