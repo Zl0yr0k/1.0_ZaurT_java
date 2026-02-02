@@ -2,7 +2,7 @@ package StringBuilder;
 
 public class MainStringBuilder {
 
-    public static void main(String[] args) {
+    public static void main(String ... args) {
         StringBuilder sb1 = new StringBuilder("Тут что то написано для замены");
         StringBuilder sb2 = new StringBuilder("Тут что то написано для замены!!!sdasdasd");
         System.out.println(ravenstvo(sb1, sb2.delete(sb1.length(), sb2.length())));
