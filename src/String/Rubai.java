@@ -1,11 +1,10 @@
 package String;
 
 public class Rubai {
-    String r1 = "Чтоб мудро жизнь прожить, знать надобно не мало Два важных правила запомни для начала:Ты"+
+    static  String r1 = "Чтоб мудро жизнь прожить, знать надобно не мало Два важных правила запомни для начала:Ты"+
             " лучше голодай, чем что попало есть,И лучше будь один, чем вместе с кем попало";
     String upper;
     String lower;
-
 
 
      void toPrint () {
@@ -23,6 +22,16 @@ public class Rubai {
             System.out.print(lower);
         }
          System.out.println();
+    }
+
+    public static void main(String[] args) {
+        String param1;
+        Integer param2;
+        param2 = Integer.parseInt(r1);
+        param1 = String.valueOf(param2);
+        param1 = Integer.toString(param2);
+        param2 = Integer.valueOf(r1);
+
     }
 
 }
