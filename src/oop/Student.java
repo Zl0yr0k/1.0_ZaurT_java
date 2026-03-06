@@ -23,6 +23,8 @@ public class Student {
         String regex = "^[A-Za-z]{3,}$";
         if (name.toString().matches(regex)){
             this.name = name;
+        }else {
+            System.out.println("Не верный формат имени");
         }
 
     }
@@ -38,6 +40,8 @@ public class Student {
         Matcher matcher = pattern.matcher(numberOfCourse);
         if (matcher.matches()){
             this.course = course;
+        } else {
+            System.out.println("Не верный формат курса");
         }
 
     }
@@ -50,7 +54,7 @@ public class Student {
         if (grade > 0 && grade <= 10) {
             this.grade = grade;
         } else {
-            System.out.println("ВВедено неверное значение");
+            System.out.println("ВВедено неверное значение Грэйда");
         }
 
     }
