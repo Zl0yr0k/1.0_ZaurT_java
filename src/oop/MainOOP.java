@@ -21,5 +21,10 @@ public class MainOOP {
         String change = st.getName().append("!!!!").toString();
         System.out.println(st.getName());
         System.out.println(change);
+        st.setName(new StringBuilder("Ro"));
+        st.setName(new StringBuilder("123445"));
+        st.setCourse(5);
+        st.setCourse(0);
+        st.setGrade(-1);
     }
 }
