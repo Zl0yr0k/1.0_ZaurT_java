@@ -26,5 +26,9 @@ public class MainOOP {
         st.setCourse(5);
         st.setCourse(0);
         st.setGrade(-1);
+        st.setGrade(11);
+        System.out.println(st);
+        st.setName(new StringBuilder("Rodion"));
+        System.out.println(st);
     }
 }
