@@ -3,7 +3,7 @@ package oop;
 import java.util.Arrays;
 
 public class MainOOP {
-    static void main() {
+    public static void main(String [] args) {
         StudentRecord sr = new StudentRecord(new StringBuilder("Valera"), "Math", 5);
         System.out.println(sr);
 
