@@ -20,11 +20,13 @@ public class Animal {
 
     int eyes;
 
+    static String type = "big";
+
     protected void eat() {
         System.out.println("Animal eats");
     }
 
-    protected void drink() {
+    void drink() {
         System.out.println("Animal drinks");
     }
 }

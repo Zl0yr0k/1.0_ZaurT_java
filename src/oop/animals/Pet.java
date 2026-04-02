@@ -10,6 +10,8 @@ public class Pet extends Animal {
     int tail = 1;
     int pow = 4;
 
+    static String type = "middle";
+
     void run() {
         System.out.println("Pet runs");
     }
