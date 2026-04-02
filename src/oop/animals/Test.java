@@ -7,6 +7,10 @@ public class Test {
 
         Cat cat = new Cat("Barsik");
         cat.sleeps();
+
+        Rabbit rabbit = new Rabbit();
+        rabbit.setHear("Mouth");
+        System.out.println(rabbit.getHear());
     }
 
 }
