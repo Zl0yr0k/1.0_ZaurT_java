@@ -1,5 +1,7 @@
 package String;
 
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
         StringHelloWorld sh = new StringHelloWorld();
@@ -15,6 +17,13 @@ public class Main {
         System.out.println("___________________________________");
         e1.email(email);
         e1.toString(email);
+
+        System.out.println("________________________________________________");
+
+
+        LocalDate ld = LocalDate.now();
+        System.out.println(ld.getMonthValue());
+        System.out.println(StringMonth.getMonth(ld.getMonthValue()));
     }
 
 
