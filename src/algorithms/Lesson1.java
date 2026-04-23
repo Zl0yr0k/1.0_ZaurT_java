@@ -1,6 +1,8 @@
 package algorithms;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Lesson1 {
     static void main() {
@@ -17,6 +19,8 @@ public class Lesson1 {
         System.out.println(maxAge);
 
         System.out.println(Arrays.toString(getMaxSign(numbers, 8)));
+
+        writePhoneNumber();
     }
 
     private static int[] getMaxSign(int[] ages, int topMaxSign) {
@@ -38,5 +42,22 @@ public class Lesson1 {
             }
         }
         return currentMax;
+    }
+
+    private static void writePhoneNumber () {
+        long [] phoneNumbers = new long[] {89182349078L,81992346745L,78982345687L,78982345687L};
+        List<Long> notePhoneNumbers = new ArrayList<>();
+        boolean alreadyExists = false;
+        for (long phone : phoneNumbers) {
+            for (long noteNumber : notePhoneNumbers) {
+                if (phone == noteNumber) {
+                    alreadyExists = true;                }
+            }
+            if (alreadyExists == false) {
+
+                notePhoneNumbers.add(phone);
+            }
+        }
+        System.out.println(notePhoneNumbers);
     }
 }
