@@ -1,29 +1,26 @@
-package main.java.com.skillbox.addressbook;
+package Addressbook;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class manContact extends Contact {
-    public manContact(String firstName, String lastName, String phone, LocalDate birthday, LocalDate salaryDay) {
+public class womanContact extends Contact{
+    public womanContact(String firstName, String lastName, String phone, LocalDate birthday, int amountOfKids) {
         super(firstName, lastName, phone, birthday);
-        this.salaryDay = salaryDay;
-
+        this.criticalDays = amountOfKids;
     }
-
-    private final LocalDate salaryDay;
-
+    private final int criticalDays;
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        manContact that = (manContact) o;
-        return Objects.equals(salaryDay, that.salaryDay);
+        womanContact that = (womanContact) o;
+        return Objects.equals(criticalDays, that.criticalDays);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), salaryDay);
+        return Objects.hash(super.hashCode(), criticalDays);
     }
 
     @Override
@@ -34,7 +31,7 @@ public class manContact extends Contact {
                 ", lastName='" + super.getLastName() + '\'' +
                 ", phone='" + super.getPhone() + '\'' +
                 ", birthday=" + super.getBirthday() +
-                ", salaryDay=" + this.salaryDay +
+                ", amountKids=" + this.criticalDays +
                 '}' + '\n';
     }
 }

@@ -1,4 +1,4 @@
-package main.java.com.skillbox.addressbook;
+package Addressbook;
 
 public class Main {
 

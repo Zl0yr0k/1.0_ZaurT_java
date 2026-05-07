@@ -1,4 +1,4 @@
-package main.java.com.skillbox.addressbook;
+package Addressbook;
 
 import java.time.LocalDate;
 import java.util.Objects;
