@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:src/Addressbook/MenuNavigator.java
 package Addressbook;
-========
-package addressbook;
->>>>>>>> 5c6cb0c (fix: rewrite directory):src/addressbook/MenuNavigator.java
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

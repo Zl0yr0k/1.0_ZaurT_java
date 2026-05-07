@@ -1,9 +1,4 @@
-<<<<<<<< HEAD:src/Addressbook/AddressBook.java
 package Addressbook;
-========
-package addressbook;
->>>>>>>> 5c6cb0c (fix: rewrite directory):src/addressbook/AddressBook.java
-
 import java.util.ArrayList;
 import java.util.Iterator;
 

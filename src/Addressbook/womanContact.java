@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:src/Addressbook/womanContact.java
 package Addressbook;
-========
-package addressbook;
->>>>>>>> 5c6cb0c (fix: rewrite directory):src/addressbook/womanContact.java
 
 import java.time.LocalDate;
 import java.util.Objects;
