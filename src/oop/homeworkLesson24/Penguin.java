@@ -24,5 +24,8 @@ public class Penguin extends Bird {
     public void speak () {
         System.out.println("Penguins can't sing");
     }
+    void abc2 () {
+        System.out.println("тут кастинг");
+    }
 
 }
