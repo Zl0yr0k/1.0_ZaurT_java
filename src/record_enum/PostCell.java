@@ -3,8 +3,7 @@ package record_enum;
 public class PostCell {
 
     Dimensions sizeCell;
-    StatusCell statusCell;
-    boolean parcel = true;
+    StatusCell statusCell = StatusCell.FREE;
     Shipment shipmentInMassive = null;
 
     public PostCell(double length, double width, double height) {
@@ -16,8 +15,23 @@ public class PostCell {
         this.statusCell = statusCell;
     }
 
-    boolean hasShipment() {
-        if (parcel == false) {
+    boolean putShipment (Shipment shipment) {
+        if (canAcceptShipment(shipment)) {
+            statusCell = StatusCell.OCCUPIED;
+            shipmentInMassive = shipment;
+            return true;
+        } else {
+            System.out.println("Посылка не размещена");
+            System.out.println(statusCell);
+            return false;
+        }
+    }
+    private boolean   canAcceptShipment(Shipment shipment) {
+        return (statusCell == StatusCell.WORK || statusCell == StatusCell.FREE ) && hasShipment() && checkDimensionsCellAndShipment(shipment);
+    }
+
+    private boolean hasShipment() {
+        if (statusCell == StatusCell.OCCUPIED) {
             System.out.println("Ячейка занята");
             return false;
         } else {
@@ -35,19 +49,6 @@ public class PostCell {
             return true;
         } else {
             System.out.println("Размеры не подходят");
-            return false;
-        }
-    }
-
-    boolean canAcceptShipment(Shipment shipment) {
-
-        if (statusCell == StatusCell.WORK && hasShipment() && checkDimensionsCellAndShipment(shipment)) {
-            shipmentInMassive = shipment;
-            System.out.println("Посылка размещена в ячейке");
-            parcel = false;
-            return true;
-        } else {
-            System.out.println("Посылка не размещена");
             return false;
         }
     }
