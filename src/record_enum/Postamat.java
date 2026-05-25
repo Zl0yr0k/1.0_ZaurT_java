@@ -13,21 +13,23 @@ public class Postamat {
         cells[6] = new PostCell(100, 25, 35, StatusCell.AT_MAINTENANCE);
         cells[9] = new PostCell(100, 25, 35, StatusCell.AT_MAINTENANCE);
     }
+    boolean statusOfParcel;
 
     void putShipment(Shipment shipment) {
 
         for (PostCell ps : cells) {
             if (ps==null){
-                //System.out.println("Эта ячейка null");
-                System.out.println("________________");
                 continue;
             }
             if (ps.putShipment(shipment)){
                 System.out.println("Посылка размещена в ячейке");
+                statusOfParcel = true;
                 return;
             }
                 System.out.println("___________");
-
+        }
+        if (statusOfParcel) {
+            System.out.println("Посылка в итоге не размещена. Нет подходящих ячеек");
         }
 
     }

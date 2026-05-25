@@ -27,7 +27,11 @@ public class PostCell {
         }
     }
     private boolean   canAcceptShipment(Shipment shipment) {
-        return (statusCell == StatusCell.WORK || statusCell == StatusCell.FREE ) && hasShipment() && checkDimensionsCellAndShipment(shipment);
+        return  isWorkOrFree() && hasShipment() && checkDimensionsCellAndShipment(shipment);
+    }
+
+    private boolean isWorkOrFree () {
+        return (statusCell == StatusCell.WORK || statusCell == StatusCell.FREE );
     }
 
     private boolean hasShipment() {
