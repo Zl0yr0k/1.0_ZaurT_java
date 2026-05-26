@@ -14,10 +14,12 @@ public class Postamat {
         cells[9] = new PostCell(100, 25, 35, StatusCell.AT_MAINTENANCE);
     }
     boolean statusOfParcel;
+    static double allWeightOfParcel = 0;
 
     void putShipment(Shipment shipment) {
 
         for (int i = 0; i < cells.length; i++){
+            statusOfParcel = false;
             if (isNull(i)){
                 continue;
             }
@@ -61,6 +63,14 @@ public class Postamat {
             }
         }
 
+    }
+    void toShowStatusAllCells () {
+        for (PostCell ps : cells) {
+            if(ps == null) {
+                continue;
+            }
+            System.out.println(ps.statusCell);
+        }
     }
 
     void weightAllShipments() {

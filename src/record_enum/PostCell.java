@@ -21,8 +21,7 @@ public class PostCell {
             shipmentInMassive = shipment;
             return true;
         } else {
-            System.out.println("Посылка не размещена");
-            System.out.println(statusCell);
+            System.out.println("Посылка не размещена " + statusCell);
             return false;
         }
     }
@@ -57,21 +56,40 @@ public class PostCell {
         }
     }
 
-    boolean extractShipment() {
-        if (isWorkOrFree()) {
-            System.out.println("Ячейка пустая и работает");
-        } else {
-            statusCell = StatusCell.FREE;
-            return true;
+    void extractShipment() {
+        switch (statusCell){
+            case OCCUPIED -> {
+                statusCell = StatusCell.FREE;
+            }
         }
-        return false;
     }
 
-    private void turnMaintenanceMode() {
-
+     void turnMaintenanceMode() {
+        switch (statusCell){
+            case FREE,WORK -> {
+                statusCell = StatusCell.AT_MAINTENANCE;
+            }
+            case OCCUPIED -> {
+                System.out.println("Ячейка занята");
+            }
+            case AT_MAINTENANCE -> {
+                System.out.println("Уже на обслуживании");
+            }
+        }
     }
 
-    private void turnWorkingMode() {
+     void turnWorkingMode() {
+        switch (statusCell){
+            case FREE,WORK -> {
+                System.out.println("Ячейка рабочая");
+            }
+            case OCCUPIED -> {
+                System.out.println("Ячейка занята");
+            }
+            case AT_MAINTENANCE -> {
+                statusCell = StatusCell.WORK;
+            }
+        }
     }
 
     @Override
