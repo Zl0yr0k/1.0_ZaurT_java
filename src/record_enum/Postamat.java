@@ -1,5 +1,7 @@
 package record_enum;
 
+import java.util.ArrayList;
+
 public class Postamat {
 
     PostCell[] cells = new PostCell[10];
@@ -17,18 +19,19 @@ public class Postamat {
 
     void putShipment(Shipment shipment) {
 
-        for (PostCell ps : cells) {
-            if (ps==null){
+        for (int i = 0; i < cells.length; i++){
+            if (cells[i]==null){
                 continue;
             }
-            if (ps.putShipment(shipment)){
-                System.out.println("Посылка размещена в ячейке");
+            if (cells[i].putShipment(shipment)){
+                System.out.println("Посылка размещена в ячейке " + i );
                 statusOfParcel = true;
                 return;
             }
-                System.out.println("___________");
+            System.out.println("___________");
         }
-        if (statusOfParcel) {
+
+        if (!statusOfParcel) {
             System.out.println("Посылка в итоге не размещена. Нет подходящих ячеек");
         }
 
