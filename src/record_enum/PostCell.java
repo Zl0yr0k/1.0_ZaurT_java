@@ -57,8 +57,14 @@ public class PostCell {
         }
     }
 
-    private void extractShipment() {
-
+    boolean extractShipment() {
+        if (isWorkOrFree()) {
+            System.out.println("Ячейка пустая и работает");
+        } else {
+            statusCell = StatusCell.FREE;
+            return true;
+        }
+        return false;
     }
 
     private void turnMaintenanceMode() {
@@ -68,4 +74,12 @@ public class PostCell {
     private void turnWorkingMode() {
     }
 
+    @Override
+    public String toString() {
+        return "PostCell{" +
+                ", shipmentInMassive=" + shipmentInMassive +
+                "sizeCell=" + sizeCell +
+                ", statusCell=" + statusCell +
+                '}';
+    }
 }
