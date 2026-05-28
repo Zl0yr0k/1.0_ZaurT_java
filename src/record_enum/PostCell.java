@@ -2,7 +2,7 @@ package record_enum;
 
 public class PostCell {
 
-    Dimensions sizeCell;
+    final Dimensions sizeCell;
     StatusCell statusCell = StatusCell.FREE;
     Shipment shipmentInMassive = null;
 
@@ -26,20 +26,20 @@ public class PostCell {
         }
     }
     private boolean   canAcceptShipment(Shipment shipment) {
-        return  isWorkOrFree() && hasShipment() && checkDimensionsCellAndShipment(shipment);
+        return  isWorkOrFree() && !hasShipment() && checkDimensionsCellAndShipment(shipment);
     }
 
     private boolean isWorkOrFree () {
         return (statusCell == StatusCell.WORK || statusCell == StatusCell.FREE );
     }
 
-    private boolean hasShipment() {
+     boolean hasShipment() {
         if (statusCell == StatusCell.OCCUPIED) {
             System.out.println("Ячейка занята");
-            return false;
+            return true;
         } else {
             System.out.println("Ячейка пустая");
-            return true;
+            return false;
         }
     }
 

@@ -2,7 +2,7 @@ package record_enum;
 
 public class Postamat {
 
-    PostCell[] cells = new PostCell[10];
+    final PostCell[] cells = new PostCell[10];
 
     {
         cells[0] = new PostCell(20, 10, 30, StatusCell.WORK);
@@ -73,8 +73,13 @@ public class Postamat {
         }
     }
 
-    void weightAllShipments() {
+    double getWeightAllShipments() {
 
+       for (PostCell ps : cells){
+           if (ps != null && ps.hasShipment()){
+               allWeightOfParcel +=  ps.shipmentInMassive.weight();
+            }}
+        return allWeightOfParcel;
     }
 
     private boolean isNull (int numberOfCell) {

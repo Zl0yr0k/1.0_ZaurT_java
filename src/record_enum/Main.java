@@ -14,6 +14,7 @@ public class Main {
         postamat.toShow();
         postamat.toShowStatusAllCells();
         postamat.cells[3].turnMaintenanceMode();
+        System.out.println("Общий вес посылок " + postamat.getWeightAllShipments());
         postamat.putShipment(shipment2);
         postamat.putShipment(shipment2);
         postamat.toShowStatusAllCells();
@@ -21,5 +22,6 @@ public class Main {
         postamat.cells[6].turnWorkingMode();
         postamat.putShipment(shipment2);
         postamat.toShowStatusAllCells();
+        System.out.println("Общий вес посылок " + postamat.getWeightAllShipments());
     }
 }
